@@ -90,3 +90,42 @@ radio buttons with same name! -> only pick 1
 label for and input id are connected
 
 Always think about how to clean up erb files!
+
+Learning Goals
+Be able to build a model with validations and default values
+Know how to build Rails views for new and edit forms
+Know how to use a hidden field to set the form's method
+Be able to separate the form out into a partial that both forms use
+Be able to show data and actions based on the form's type
+Know how to use select and input HTML elements
+Be able to add methods to a Rails model
+
+Think about redirect and render!
+Redirect -> Call another method thus going through all logic 
+Render -> only rendering view
+Think about the URL, if logic needs to be done, instance variables, etc.
+
+Name == radio button identification to pick 1 
+Name == what the HTML form sends back, so nest for mass assignment
+for and id tags are connected! How labels relate to input.
+
+A gotcha: You need "" around all Ruby inserted things if you want it to not 
+break HTML code.
+Ie. if you want selected, don't include "" around. 
+If you want "selected", include "" around the <% %>
+String "selected" in Ruby will be selected in HTML, so you need to add or not 
+add surrounding "" based on the situation.
+
+For some reason, in the form action, it's <%= %>... despite it not being 
+displayed anywhere on the page? Otherwise it doesn't work.
+Apparently, all values need the <%= %>, if you use just <% %>. nothing will 
+happen. I guess it'll be considered invisible Ruby code. 
+
+That makes sense.
+<%= %> - Any code that you would write in HTML, even if it doesn't display on page 
+<% %> - Ruby code
+
+Basically nearly all your errors had to do with how <%=%> and <%%> tags were used, 
+along with what to cover with "".
+
+In ActiveRecord, the .or for where makes a ( ), it's useful as hell.

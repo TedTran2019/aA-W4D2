@@ -1,0 +1,44 @@
+<% if method == "patch" %>
+  <% action_url =  cat_url(@cat) %>
+  <% submit_button = "Update" %>
+<% else %>
+  <% action_url =  cats_url %>
+  <% submit_button = "Create" %>
+<% end %>
+
+<form action="<%= action_url %>" method="post">
+  <% if method == "patch"%>
+    <input type="hidden" name="_method" value="patch">   
+  <% end %>
+    
+  <label for="name">Name</label>
+  <input type="text" id="name", name="cat[name]" value="<%=cat.name%>">
+
+  <label for="sex">Sex</label>
+  <input type="radio" name="cat[sex]" id="sex", value="m" 
+    <%= @cat.sex == "m" ? "checked" : "" %>>M
+  <input type="radio" name="cat[sex]" id="sex", value="f"
+    <%= @cat.sex == "f" ? "checked" : "" %>>F
+
+  <label for="color">Color</label>
+  <select name="cat[color]" id="color">
+    <option disabled 
+    <%= cat.color ? "" : "selected" %>> Select a color!
+    </option>
+    <% Cat.colors.each do |color| %>
+      <option value="<%=color%>"
+      <%= cat.color == color ? "selected" : "" %>>
+      <%=color%>
+    </option>
+    <% end %>
+  </select>
+
+  <label for="birth_date">Birth Date</label>
+  <input type="date" name="cat[birth_date]" id="birth_date" value="<%=cat.birth_date%>">
+
+  <label for="description">Description</label>
+  <textarea name="cat[description]" id="description" cols="30" rows="10"><%=cat.description%>
+  </textarea> 
+
+  <button type="submit"><%=submit_button%></button>
+</form>
