@@ -129,3 +129,15 @@ Basically nearly all your errors had to do with how <%=%> and <%%> tags were use
 along with what to cover with "".
 
 In ActiveRecord, the .or for where makes a ( ), it's useful as hell.
+
+Interpolation with #{} doesn't always work for some reason.
+Try symbol : etc or ?.
+
+Transaction -> all succeed or rollback! ActiveRecord class.transaction do... w/e
+
+When in doubt, make the HTML yourself.
+
+What stumped you was the button_to not workign at all for some odd reason, 
+mistakes with approve and deny (denying all n' stuff), and some really dumb 
+small mistakes. I guess knowing how to debug is vastly important for saving time, 
+otherwise you'll waste lots of time on small errors.

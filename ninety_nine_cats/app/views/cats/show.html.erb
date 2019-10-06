@@ -1,1 +1,22 @@
 <%= render @cat %>
+
+<br>
+<% CatRentalRequest.sorted.each do |request| %>
+  <%="#{request.start_date} -- through -- #{request.end_date}"%>
+  <% if request.pending? %>
+    <form action="<%=approve_cat_rental_request_url(request)%>" method="post">
+      <input type="hidden" name="_method" value="post">
+      <button type="submit">Approve</button>
+    </form>
+   <form action="<%=deny_cat_rental_request_url(request)%>" method="post">
+      <input type="hidden" name="_method" value="post">
+      <button type="submit">Deny</button>
+    </form>
+  <% else %>
+    <br>
+    <%= request.status %>
+  <% end %>
+  <br>
+<% end %>
+
+<a href="<%=new_cat_rental_request_url%>">Make a rental request!</a>

@@ -15,8 +15,8 @@ description: "angry boy", sex: "m")
 Cat.create!(name: "Saddy", birth_date: Date.parse("2016-6-11"), color: "white",\
 description: "sad girl", sex: "f")
 
-CatRentalRequest.create!(cat_id: 1, start_date: Date.parse("2019-1-1"),\
-end_date: Date.parse("2019-2-1"))
+# CatRentalRequest.create!(cat_id: 1, start_date: Date.parse("2019-1-1"),\
+# end_date: Date.parse("2019-2-1"))
 
-CatRentalRequest.create!(cat_id: 1, start_date: Date.parse("2019-1-15"),\
-end_date: Date.parse("2019-2-24"))
+# CatRentalRequest.create!(cat_id: 1, start_date: Date.parse("2019-1-15"),\
+# end_date: Date.parse("2019-2-24"))
